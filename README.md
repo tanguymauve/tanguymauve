@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @tanguymauve
-- 👀 I’m interested in games of all sort  
-- 🌱 I’m currently learning Rust  
+- 👀 I’m interested in coding games of all sort  
+- 🌱 I’m currently learning Python 🐍  
 - 📫 Reach me by my mail adress : tanguy.mauve@proton.me !
 
 <!---
