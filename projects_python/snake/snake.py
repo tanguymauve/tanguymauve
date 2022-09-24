@@ -47,12 +47,19 @@ i = 1
 c = 1
 while i != 0:
     deplacement()
-    print(" ---------")
+    
+    for c in range(8):
+        print("", "-", end="") 
+        print()
     for c in range(8):
         print("|")
     for c in range(x):
             #print("|", end="")
         print(x*"", end="")
+    for c in range(y):
         print(y*"", end="")
         print(snake, end="")
-    print(" ---------")
+    for c in range(8):
+        print("", "-",end="")
+        print()
+      
