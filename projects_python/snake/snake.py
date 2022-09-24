@@ -6,6 +6,8 @@
 #lui donner une pomme à manger qui peut apparaître partout
 snake = "x"
 apple = "o"
+x = 1
+y = 1
 print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
 print(" ---------")
 for i  in range(8):
@@ -16,16 +18,31 @@ def deplacement():
     deplacement = input("direction :")
     if deplacement == "d":
         #x go right
-        print("d")
+        x =+ 1
+        print(x)
     elif deplacement == "q":
         #x go left
-        print("q")
+        x =- 1
+        print(x)
     elif deplacement == "z":
         #x go up
-        print("z")
+        y =+ 1
+        print(y)
     elif deplacement == "s":
         #x go down
-        print("s")
+        y =- 1
+        print(y)
+
+        
+
+if  i == y:
+   print("|", end='')
+   for i in range(x):
+     print(' ', end='')
+   print('X', end='')
+   for i in range(8 - x):
+     print(' ', end='')
+   print("|", end='')
 
 i = 1
 while i != 0:
