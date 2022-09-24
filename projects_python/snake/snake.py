@@ -11,6 +11,7 @@ print(" ---------")
 for i  in range(8):
     print("|         |")
 print(" ---------")
+
 def deplacement():
     deplacement = input("direction :")
     if deplacement == "d":
@@ -26,6 +27,10 @@ def deplacement():
         #x go down
         print("s")
 
-
-
-deplacement()
+i = 1
+while i != 0:
+    deplacement()
+    print(" ---------")
+    for i  in range(8):
+        print("|         |")
+    print(" ---------")
