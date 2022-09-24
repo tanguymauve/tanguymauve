@@ -45,21 +45,16 @@ def deplacement():
 
 i = 1
 c = 1
-while i != 0:
-    deplacement()
+while i != 0: #permet de faire une boucle demandant l'input 
+    deplacement() #appel la fonction pour les déplacements du snake
     
-    for c in range(8):
-        print("", "-", end="") 
-        print()
-    for c in range(8):
+    for c in range(8): #initialise la barre du haut
+        print("-", end="") 
+    for c in range(8): #imprime les barres sur le côté gauche
         print("|")
-    for c in range(x):
-            #print("|", end="")
-        print(x*"", end="")
-    for c in range(y):
-        print(y*"", end="")
-        print(snake, end="")
-    for c in range(8):
-        print("", "-",end="")
-        print()
+    for c in range(x): #print le serpent en bas à gauche 
+        print(x*"", snake.replace(snake, "", 1), snake, end="")
+    for c in range(8): #print la barre du bas
+        #print("", "-",end="")
+        print("-", end="")
       
