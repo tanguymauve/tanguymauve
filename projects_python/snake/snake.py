@@ -6,13 +6,9 @@
 #lui donner une pomme à manger qui peut apparaître partout
 snake = "x"
 apple = "o"
-x = 5
-y = 8
+x = 0
+y = 0
 print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
-print(" ---------")
-for i  in range(8):
-    print("|         |")
-print(" ---------")
 
 def deplacement():
     global x
@@ -35,17 +31,18 @@ def deplacement():
         y += 1
         print(y)
 
-i = 8
-while i != 0: #permet de faire une boucle demandant l'input
-    deplacement() #appel la fonction pour les déplacements du snake      
+i = 0
+while i !=9: #permet de faire une boucle demandant l'input
+    deplacement() #appel la fonction pour les déplacements du snake
+    while i !=y:
+        print("|        |")      
     if  i == y:
-        print("|", end='')
-        for i in range(x):
-            print(' ', end='')
-        print(snake, end='')
-        for i in range(8 - x):
-            print(' ', end='')
-        print("|", end='')
+        print("|", (x-1)*"", snake, (8 - x)*"", "|",)
+        for i in range(8 - y):
+            print("|        |")
+        #for i in range(8 - x):
+        #    print(' ', end='')
+        #    print("|", end='')
 
 """
 i = 1
