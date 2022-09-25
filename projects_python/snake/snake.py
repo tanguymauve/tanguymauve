@@ -16,30 +16,33 @@ def deplacement():
     deplacement = input("direction :")
     if deplacement == "d":
         #x go right
-        x -= 1
+        x += 1
         print(x)
     elif deplacement == "q":
         #x go left
-        x += 1
+        x -= 1
         print(x)
     elif deplacement == "z":
         #x go up
-        y -= 1
+        y += 1
         print(y)
     elif deplacement == "s":
         #x go down
-        y += 1
+        y -= 1
         print(y)
 
 i = 0
 while i !=9: #permet de faire une boucle demandant l'input
     deplacement() #appel la fonction pour les déplacements du snake
-    while i !=y:
-        print("|        |")      
-    if  i == y:
-        print("|", (x-1)*"", snake, (8 - x)*"", "|",)
-        for i in range(8 - y):
-            print("|        |")
+    #while i !=y:
+     #   print("|        |")
+    for i in range(8 - y):      
+        if  i == y:
+            print("|", (x-1)*"", snake, (8 - x)*"", "|",)
+        else:
+            print("|        |") 
+        #for i in range(8 - y):
+         #   print("|        |")
         #for i in range(8 - x):
         #    print(' ', end='')
         #    print("|", end='')
