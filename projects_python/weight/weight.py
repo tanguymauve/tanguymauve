@@ -5,14 +5,12 @@ oneLbs = 2.20
 def convertWeight():
     userWeight = int(input("Weight:" ))
     kgOrLbs = input("(K)g or (L)bs ?")
-    K=""
-    L=""
-    if kgOrLbs == K:
+    if kgOrLbs == "K":
         userWeight *= oneLbs
-        print(userWeight)
-    elif kgOrLbs == L:
+        print("Your weight in Lbs is", userWeight, "Lbs")
+    elif kgOrLbs == "L":
         userWeight *= oneKg
-        print(userWeight)
+        print("Your weight in Kg is", userWeight, "Kg")
 
 convertWeight()
 
