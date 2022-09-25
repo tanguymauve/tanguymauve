@@ -1,0 +1,16 @@
+AI : 
+- predict stock prices :
+    to do so, download stock market dataset at quantopian.com/quandl.com
+
+- human activity recognition system
+    support vector machine (MVM)
+    pas compris le but
+
+- walmart sales forecasting
+
+- predict wine quality
+    wine quality dataset from Kaggle
+    explore data exploration and data visualisation
+
+- house price prediction
+    linear regression
