@@ -37,7 +37,6 @@ def deplacement():
 i = 0
 while True: #permet de faire une boucle demandant l'input
     deplacement() #appel la fonction pour les déplacements du snake
-    #while i !=y:
     print(" ........")
     for i in range(8):      
         if  i == y:
