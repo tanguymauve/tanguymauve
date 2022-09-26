@@ -1,0 +1,5 @@
+pblm : quand y == yApple, seulement snake apparaît
+
+pour plus tard : 
+pour la queue du serpent, quand x == xApple et y == yApple
+tu double le nombre de x print en et tu règles en fonction des coordonnées

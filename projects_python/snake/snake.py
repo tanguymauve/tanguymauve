@@ -1,15 +1,18 @@
 
-#créer le terrain de jeu, avec des limites à ne pas dépasser
-#créer un serpent
-#lui donner 4 mouvements : haut bas gauche droite décidé par l'utilisateur
-#faire en sorte que le serpent puisse tout le temps bouger
-#lui donner une pomme à manger qui peut apparaître partout
+#Modules
+import random
+from symbol import yield_arg
+
+#Variables
 snake = "x"
 apple = "o"
 x = 0
 y = 0
+
+#Intro
 print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
 
+#Fonctions 
 def deplacement():
     global x
     global y 
@@ -33,14 +36,25 @@ def deplacement():
     elif x == 7 or y ==7 or x == 0 or y == 0:
         print("The snake is not thin enough !")
         print(x)
+xApple = 0
+yApple = 0
+def generateApple():
+    xApple = random.randrange(8)
+    yApple = random.randrange(8)
 
+#Boucle
 i = 0
 while True: #permet de faire une boucle demandant l'input
-    deplacement() #appel la fonction pour les déplacements du snake
+    deplacement() #appel la fonction pour les déplacements du snake 
     print(" ........")
-    for i in range(8):      
+    for i in range(8):
         if  i == y:
             print("|" + (x)*" " + snake + (8 - x -1)*" " + "|")
+        elif i == yApple:
+            print("|" + (xApple)*" " + apple + (8 - xApple -1)*" " + "|")
+            if x == xApple and y == yApple:
+                generateApple()
         else:
             print("|        |")
     print(" °°°°°°°°")
+
