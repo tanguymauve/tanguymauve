@@ -31,6 +31,11 @@ def deplacement():
         y += 1
         print(y)
 
+def limit(num, minimum=1, maximum=8):
+  """Limits input 'num' between minimum and maximum values.
+  Default minimum value is 1 and maximum value is 8."""
+  return max(min(num, maximum), minimum)
+
 i = 0
 while True: #permet de faire une boucle demandant l'input
     deplacement() #appel la fonction pour les déplacements du snake
