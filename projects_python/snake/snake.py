@@ -14,23 +14,23 @@ def deplacement():
     global x
     global y 
     deplacement = input("direction :")
-    if deplacement == "d" and x <= 7:
+    if deplacement == "d" and x <= 6:
         #x go right
         x += 1
         print(x)
-    elif deplacement == "q" and x <= 7:
+    elif deplacement == "q" and x <= 6:
         #x go left
         x -= 1
         print(x)
-    elif deplacement == "z" and y <= 7:
+    elif deplacement == "z" and y <= 6:
         #x go up
         y -= 1
         print(y)
-    elif deplacement == "s" and y <= 7:
+    elif deplacement == "s" and y <= 6:
         #x go down
         y += 1
         print(y)
-    else :
+    elif x == 7 or y ==7 or x == -1 or y == -1:
         print("The snake is not thin enough !")
         print(x)
 
