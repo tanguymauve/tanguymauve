@@ -14,27 +14,25 @@ def deplacement():
     global x
     global y 
     deplacement = input("direction :")
-    if deplacement == "d":
+    if deplacement == "d" and x <= 7:
         #x go right
         x += 1
         print(x)
-    elif deplacement == "q":
+    elif deplacement == "q" and x <= 7:
         #x go left
         x -= 1
         print(x)
-    elif deplacement == "z":
+    elif deplacement == "z" and y <= 7:
         #x go up
         y -= 1
         print(y)
-    elif deplacement == "s":
+    elif deplacement == "s" and y <= 7:
         #x go down
         y += 1
         print(y)
-
-def limit(num, minimum=1, maximum=8):
-  """Limits input 'num' between minimum and maximum values.
-  Default minimum value is 1 and maximum value is 8."""
-  return max(min(num, maximum), minimum)
+    else :
+        print("The snake is not thin enough !")
+        print(x)
 
 i = 0
 while True: #permet de faire une boucle demandant l'input
