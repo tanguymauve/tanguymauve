@@ -18,11 +18,11 @@ def deplacement():
         #x go right
         x += 1
         print(x)
-    elif deplacement == "q" and x <= 6:
+    elif deplacement == "q" and x >= 1:
         #x go left
         x -= 1
         print(x)
-    elif deplacement == "z" and y <= 6:
+    elif deplacement == "z" and y >= 1:
         #x go up
         y -= 1
         print(y)
@@ -30,7 +30,7 @@ def deplacement():
         #x go down
         y += 1
         print(y)
-    elif x == 7 or y ==7 or x == -1 or y == -1:
+    elif x == 7 or y ==7 or x == 0 or y == 0:
         print("The snake is not thin enough !")
         print(x)
 
@@ -38,9 +38,10 @@ i = 0
 while True: #permet de faire une boucle demandant l'input
     deplacement() #appel la fonction pour les déplacements du snake
     #while i !=y:
-     #   print("|        |")
+    print(" ........")
     for i in range(8):      
         if  i == y:
             print("|" + (x)*" " + snake + (8 - x -1)*" " + "|")
         else:
             print("|        |")
+    print(" °°°°°°°°")
