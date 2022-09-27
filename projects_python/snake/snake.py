@@ -47,17 +47,18 @@ def generateApple():
     yApple = random.randrange(8)
 
 #Boucle
+generateApple()
 i = 0
 while True: #permet de faire une boucle demandant l'input
-    deplacement() #appel la fonction pour les déplacements du snake 
+    deplacement() #appel la fonction pour les déplacements du snake
     print(" ........")
     for i in range(8):
         if  i == y:
             print("|" + (x)*" " + snake + (8 - x -1)*" " + "|")
         elif i == yApple:
             print("|" + (xApple)*" " + apple + (8 - xApple -1)*" " + "|")
-        elif x == xApple and y == yApple:
-                generateApple()
+        if x == xApple and y == yApple:
+            generateApple()
         else:
             print("|        |")
     print(" °°°°°°°°")
