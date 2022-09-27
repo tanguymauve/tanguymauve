@@ -36,9 +36,13 @@ def deplacement():
     elif x == 7 or y ==7 or x == 0 or y == 0:
         print("The snake is not thin enough !")
         print(x)
-xApple = 0
-yApple = 0
+
+
+#pblm au niveau des variables xApple et yApple
+#je n'arrive pas à les déclarer correctement
 def generateApple():
+    global xApple
+    global yApple
     xApple = random.randrange(8)
     yApple = random.randrange(8)
 
@@ -52,9 +56,10 @@ while True: #permet de faire une boucle demandant l'input
             print("|" + (x)*" " + snake + (8 - x -1)*" " + "|")
         elif i == yApple:
             print("|" + (xApple)*" " + apple + (8 - xApple -1)*" " + "|")
-            if x == xApple and y == yApple:
+        elif x == xApple and y == yApple:
                 generateApple()
         else:
             print("|        |")
     print(" °°°°°°°°")
+    print(xApple, yApple)
 

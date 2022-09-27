@@ -1,4 +1,5 @@
 pblm : quand y == yApple, seulement snake apparaît
+    + je n'arrive pas à déclarer correctement mes Variables xApple et yApple
 
 pour plus tard : 
 pour la queue du serpent, quand x == xApple et y == yApple
