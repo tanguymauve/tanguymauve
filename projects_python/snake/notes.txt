@@ -1,5 +1,21 @@
 pblm : if player_x == xApple et player_y == yApple
+stocker les coordonnées de la tete dans deux listes x et y
+chaque bout de queue prends les coordonnées du bout le précédent
 
+thislist.append("orange")
+thislist.insert(1, "orange")
+thislist.remove("banana")
+thislist.pop(1), thislist.pop()
+for x in thislist:
+  print(x)
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i])
+
+ce que je cherche : 
+comment placer le bout de queue aux dernieres coordonnées enregistrées
+
+variable eatenApple créer pour compter le nombre de bout de queue à créer
 bug : 
 ---------------------------------------
 The snake is not thin enough !
@@ -81,6 +97,3 @@ quand
 
 
 
-pour plus tard : 
-pour la queue du serpent, quand x == xApple et y == yApple
-tu double le nombre de x print en et tu règles en fonction des coordonnées
