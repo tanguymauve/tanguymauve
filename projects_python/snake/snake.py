@@ -4,7 +4,8 @@ from os import remove
 import random
 
 #Variables
-snake = "x" #Head of the snake
+snakeHead = "x" #Head of the snake
+snakeTail = "x"
 apple = "o" #Apple
 player_x = 0 #Coordinate x of the snake's head
 player_y = 0 #Coordinate y of the snake's head
@@ -54,13 +55,13 @@ while True:
         line = "|"
         for x in range(8):
             if x == player_x and y == player_y:
-                line += snake
+                line += snakeHead
                 playerCoordinateX.append(player_x)
                 playerCoordinateY.append(player_y)
-                for y in range(8):
+                for y in range(8-1):
                     for i in range(eatenApple):
                         if eatenApple >= 1 and x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
-                            line += snake
+                            line += snakeTail #tail n'arrive pas à aller autre part que à droite de snakeHead car il est imprimer après
             elif x == xApple and y == yApple:
                 line += apple 
             else:
@@ -68,8 +69,15 @@ while True:
             if player_x == xApple and player_y == yApple:
                 generateApple()
                 eatenApple += 1
+            if eatenApple >= 1:
+                x = playerCoordinateX[-1]
+                y = playerCoordinateY[-1]
+                for y in range(playerCoordinateY):
+                    for x in range(playerCoordinateX):
+                        line += snakeTail
         line += "|"
         print(line)
     print(" °°°°°°°°")
     print(playerCoordinateX)
     print(playerCoordinateY)
+    print(playerCoordinateX[-1], playerCoordinateY[-1])
