@@ -1,5 +1,6 @@
 
 #Modules
+from os import remove
 import random
 
 #Variables
@@ -7,8 +8,8 @@ snake = "x" #Head of the snake
 apple = "o" #Apple
 player_x = 0 #Coordinate x of the snake's head
 player_y = 0 #Coordinate y of the snake's head
-playerCoordinateX = [0, 0, 0, 0] #List to register every snake's x coordinate 
-playerCoordinateY = [0, 0, 0, 0] #List to register every snake's y coordinate 
+playerCoordinateX = [0] #List to register every snake's x coordinate 
+playerCoordinateY = [0] #List to register every snake's y coordinate 
 eatenApple = 0
 
 #Intro
@@ -44,11 +45,7 @@ def generateApple():
     global yApple
     xApple = random.randrange(8)
     yApple = random.randrange(8)
-    
-def generateQueue():
-    playerCoordinateX[-1]
-    playerCoordinateY[-1]
-    
+     
 generateApple()
 while True:
     deplacement()
@@ -60,7 +57,9 @@ while True:
                 line += snake
                 playerCoordinateX.append(player_x)
                 playerCoordinateY.append(player_y)
-                
+                for i in range(eatenApple):
+                    if eatenApple >= 1 and x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
+                        line += snake
             elif x == xApple and y == yApple:
                 line += apple 
             else:
@@ -69,8 +68,6 @@ while True:
                 generateApple()
                 eatenApple += 1
                 #line += snake aux avant-dernières coordonnées enregistrés pour la tête du serpent
-            elif x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
-                line += eatenApple*snake
         line += "|"
         print(line)
     print(" °°°°°°°°")
