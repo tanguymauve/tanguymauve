@@ -1,5 +1,85 @@
-pblm : quand y == yApple, seulement snake apparaît
-    + je n'arrive pas à déclarer correctement mes Variables xApple et yApple
+pblm : if player_x == xApple et player_y == yApple
+
+bug : 
+---------------------------------------
+The snake is not thin enough !
+7
+ ........
+|       x|
+|        |
+|        |
+|        |
+|        |
+|        |
+|       o|
+|        |
+ °°°°°°°°
+7 6
+direction :s   
+1
+ ........
+|        |
+|       x|
+|        |
+|        |
+|        |
+|        |
+|        |
+|        |
+ °°°°°°°°
+6 1 
+-----------------------------------------
+pourquoi la pomme n'apparait pas ??
+-----------------------------------------
+direction :q
+3
+|        |
+|        |
+|        |
+|        |
+|        |
+|   o    |
+|   x    |
+|        |
+direction :z
+5
+4 0
+|        |
+|        |
+|        |
+|        |
+|        |
+|   x    |
+|        |
+|        |
+
+........
+3 0
+|        |
+|        |
+|        |
+|        |
+|  x     |
+|        |
+|        |
+|        |
+ °°°°°°°°
+-----------------------------------------
+même question
+
+quand 
+
+
+
+
+
+
+
+
+
+
+
+
 
 pour plus tard : 
 pour la queue du serpent, quand x == xApple et y == yApple

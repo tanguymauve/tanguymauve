@@ -1,66 +1,65 @@
 
 #Modules
 import random
-from symbol import yield_arg
 
 #Variables
 snake = "x"
 apple = "o"
-x = 0
-y = 0
+player_x = 0
+player_y = 0
 
 #Intro
 print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
 
 #Fonctions 
 def deplacement():
-    global x
-    global y 
+    global player_x
+    global player_y 
     deplacement = input("direction :")
-    if deplacement == "d" and x <= 6:
-        #x go right
-        x += 1
-        print(x)
-    elif deplacement == "q" and x >= 1:
-        #x go left
-        x -= 1
-        print(x)
-    elif deplacement == "z" and y >= 1:
-        #x go up
-        y -= 1
-        print(y)
-    elif deplacement == "s" and y <= 6:
-        #x go down
-        y += 1
-        print(y)
-    elif x == 7 or y ==7 or x == 0 or y == 0:
+    if deplacement == "d" and player_x <= 6:
+        #player_x go right
+        player_x += 1
+        print("player_x =", player_x, "player_y =", player_y )
+    elif deplacement == "q" and player_x >= 1:
+        #player_x go left
+        player_x -= 1
+        print("player_x =", player_x, "player_y =", player_y )   
+    elif deplacement == "z" and player_y >= 1: 
+        #player_x go up
+        player_y -= 1
+        print("player_x =", player_x, "player_y =", player_y )
+    elif deplacement == "s" and player_y <= 6:
+        #player_x go down
+        player_y += 1
+        print("player_x =", player_x, "player_y =", player_y )
+    elif player_x == 7 or player_y ==7 or player_x == 0 or player_y == 0:
         print("The snake is not thin enough !")
-        print(x)
+        print("player_x =", player_x, "player_y =", player_y)
 
-
-#pblm au niveau des variables xApple et yApple
-#je n'arrive pas à les déclarer correctement
 def generateApple():
     global xApple
     global yApple
     xApple = random.randrange(8)
     yApple = random.randrange(8)
 
-#Boucle
 generateApple()
-i = 0
-while True: #permet de faire une boucle demandant l'input
-    deplacement() #appel la fonction pour les déplacements du snake
+while True:
+    deplacement()
     print(" ........")
-    for i in range(8):
-        if  i == y:
-            print("|" + (x)*" " + snake + (8 - x -1)*" " + "|")
-        elif i == yApple:
-            print("|" + (xApple)*" " + apple + (8 - xApple -1)*" " + "|")
-        if x == xApple and y == yApple:
-            generateApple()
-        else:
-            print("|        |")
-    print(" °°°°°°°°")
-    print(xApple, yApple)
+    for y in range(8):
+        line = "|"
+        for x in range(8):
+            if x == player_x and y == player_y:
+                line += snake
+            elif x == xApple and y == yApple:
+                line += apple
+            else:
+                line += " "
 
+            if player_x == xApple and player_y == yApple:
+                generateApple()
+                print(snake)
+                print(xApple,yApple)
+        line += "|"
+        print(line)
+    print(" °°°°°°°°")
