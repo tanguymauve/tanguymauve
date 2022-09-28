@@ -57,9 +57,10 @@ while True:
                 line += snake
                 playerCoordinateX.append(player_x)
                 playerCoordinateY.append(player_y)
-                for i in range(eatenApple):
-                    if eatenApple >= 1 and x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
-                        line += snake
+                for y in range(8):
+                    for i in range(eatenApple):
+                        if eatenApple >= 1 and x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
+                            line += snake
             elif x == xApple and y == yApple:
                 line += apple 
             else:
@@ -67,7 +68,6 @@ while True:
             if player_x == xApple and player_y == yApple:
                 generateApple()
                 eatenApple += 1
-                #line += snake aux avant-dernières coordonnées enregistrés pour la tête du serpent
         line += "|"
         print(line)
     print(" °°°°°°°°")
