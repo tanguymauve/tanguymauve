@@ -60,6 +60,7 @@ while True:
         for x in range(8):
             if x == xApple and y == yApple:
                     line += apple
+                    eatenApple += 1
             else:
                     line += " "
             for i in range(len(playerCoordinateX)):  

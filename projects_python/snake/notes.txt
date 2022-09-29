@@ -16,7 +16,10 @@ ce que je cherche :
 comment placer le bout de queue aux dernieres coordonnées enregistrées
 
 variable eatenApple créer pour compter le nombre de bout de queue à créer
-bug : 
+
+for i in range(len(playerCoordinateX)):
+		print((i, chars[i]))
+
 ---------------------------------------
 The snake is not thin enough !
 7
