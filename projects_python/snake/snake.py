@@ -4,7 +4,7 @@ from os import remove
 import random
 
 #Variables
-snakeHead = "x" #Head of the snake
+snake = "x" #Head of the snake
 apple = "o" #Apple
 playerCoordinateX = [0] #List to register every snake's x coordinate 
 playerCoordinateY = [0] #List to register every snake's y coordinate 
@@ -51,31 +51,20 @@ def generateApple():
      
 generateApple()
 while True:
+    deplacement()
     if playerCoordinateX[-1] == xApple and playerCoordinateY[-1] == yApple:
         generateApple()
-    deplacement()
     print(" ........")
     for y in range(8):
         line = "|"
         for x in range(8):
-            if x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
-                line += snakeHead
-            elif x == xApple and y == yApple:
-                line += apple 
+            for i in range(len(playerCoordinateX)):  
+                if x == playerCoordinateX[i] and y == playerCoordinateY[i]:
+                    line += snake
             else:
                 line += " "
-            '''
-            if eatenApple >= 1:
-                x = playerCoordinateX[-1]
-                y = playerCoordinateY[-1]
-                for y in range(playerCoordinateY):
-                    for x in range(playerCoordinateX):
-                        line += snakeHead
-            '''
         line += "|"
         print(line)
     print(" °°°°°°°°")
-
-    print(playerCoordinateX)
-    print(playerCoordinateY)
+    print(range(playerCoordinateX[i]), range(playerCoordinateY[i]))
     print(playerCoordinateX[-1], playerCoordinateY[-1])

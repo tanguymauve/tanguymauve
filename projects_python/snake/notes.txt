@@ -82,12 +82,14 @@ direction :z
  °°°°°°°°
 -----------------------------------------
 même question
-je veux imprimer un x quand il a mangé une pomme et
-quand x correspond à array[-1] et y correspond a arrayY[-1]
-et on veut l'imprimer qu'il aille sur les anciennes coordonnées de x
-mais comme line ne peut être imprimer qu'après c'est impossible !
+Imagine que ton plateau est une grille avec des cases
+Avec ta double boucle, tu parcours chaque case une à une
+Et à chaque case tu te demandes ce que tu dois mettre
 
-
+for y in range(8-1):
+                    for i in range(eatenApple):
+                        if eatenApple >= 1 and x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
+                            line += snakeTail #tail n'arrive pas à aller autre part que à droite de snakeHead car il est imprimer après
 
 
 
