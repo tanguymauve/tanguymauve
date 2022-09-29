@@ -52,17 +52,17 @@ def generateApple():
 generateApple()
 while True:
     deplacement()
-    if playerCoordinateX[-1] == xApple and playerCoordinateY[-1] == yApple:
-        generateApple()
     print(" ........")
     for y in range(8):
         line = "|"
         for x in range(8):
+            if x == xApple and y == yApple:
+                    line += apple
             for i in range(len(playerCoordinateX)):  
                 if x == playerCoordinateX[i] and y == playerCoordinateY[i]:
                     line += snake
-            else:
-                line += " "
+                else:
+                    line += " "
         line += "|"
         print(line)
     print(" °°°°°°°°")
