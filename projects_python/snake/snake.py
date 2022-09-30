@@ -8,7 +8,6 @@ snake = "x" #Head of the snake
 apple = "o" #Apple
 playerCoordinateX = [0] #List to register every snake's x coordinate 
 playerCoordinateY = [0] #List to register every snake's y coordinate 
-eatenApple = 0
 
 #Intro
 print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
@@ -52,9 +51,8 @@ def isThatASnake():
     for i in range(len(playerCoordinateX)):  
                 if x == playerCoordinateX[i] and y == playerCoordinateY[i]:
                     return True
-                else:
-                    return False
-     
+    return False
+
 generateApple()
 while True:
     deplacement()
@@ -64,14 +62,17 @@ while True:
         for x in range(8):
             if x == xApple and y == yApple:
                     line += apple
-                    eatenApple += 1
+                    generateApple()
             elif isThatASnake() :
                 line += snake
             else:
                     line += " "
-            
+        if not x == xApple and y ==yApple:
+                playerCoordinateX.pop(0)
+                playerCoordinateY.pop(0)
+        else:
+            generateApple()
                 
         line += "|"
         print(line)
     print(" °°°°°°°°")
-    print(playerCoordinateX[-1], playerCoordinateY[-1])
