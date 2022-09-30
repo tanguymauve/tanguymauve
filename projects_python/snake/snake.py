@@ -49,11 +49,11 @@ def generateApple():
     yApple = random.randrange(8)
 
 def isThatASnake():
-    global line
     for i in range(len(playerCoordinateX)):  
                 if x == playerCoordinateX[i] and y == playerCoordinateY[i]:
                     return True
-                    
+                else:
+                    return False
      
 generateApple()
 while True:
@@ -65,10 +65,10 @@ while True:
             if x == xApple and y == yApple:
                     line += apple
                     eatenApple += 1
+            elif isThatASnake() :
+                line += snake
             else:
                     line += " "
-            if isThatASnake() :
-                line += snake
             
                 
         line += "|"
