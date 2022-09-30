@@ -88,19 +88,3 @@ même question
 Imagine que ton plateau est une grille avec des cases
 Avec ta double boucle, tu parcours chaque case une à une
 Et à chaque case tu te demandes ce que tu dois mettre
-
-for y in range(8-1):
-                    for i in range(eatenApple):
-                        if eatenApple >= 1 and x == playerCoordinateX[-1] and y == playerCoordinateY[-1]:
-                            line += snakeTail #tail n'arrive pas à aller autre part que à droite de snakeHead car il est imprimer après
-
-
-
-
-
-
-
-
-
-
-
