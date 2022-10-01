@@ -1,6 +1,5 @@
 
 #Modules
-from os import remove
 import random
 
 #Variables
@@ -67,14 +66,13 @@ while True:
                 line += snake
             else:
                     line += " "
-    #LOGIQUE
-            while playerCoordinateX[-1] != xApple and playerCoordinateY[-1] != yApple:
-                playerCoordinateX.pop(0)
-                playerCoordinateY.pop(0)
-            if playerCoordinateX[-1] == xApple and playerCoordinateY[-1] == yApple:
-                generateApple()
         line += "|"
         print(line)
     print(" °°°°°°°°")
+    if playerCoordinateX[-1] != xApple and playerCoordinateY[-1] != yApple:
+        playerCoordinateX.pop(0)
+        playerCoordinateY.pop(0)
+    if playerCoordinateX[-1] == xApple and playerCoordinateY[-1] == yApple:
+                generateApple()
     print(playerCoordinateX)
     print(playerCoordinateY)
