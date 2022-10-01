@@ -6,8 +6,8 @@ import random
 #Variables
 snake = "x" #Head of the snake
 apple = "o" #Apple
-playerCoordinateX = [0] #List to register every snake's x coordinate 
-playerCoordinateY = [0] #List to register every snake's y coordinate 
+playerCoordinateX = [0,0] #List to register every snake's x coordinate 
+playerCoordinateY = [0,0] #List to register every snake's y coordinate 
 
 #Intro
 print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
@@ -63,16 +63,15 @@ while True:
         for x in range(8):
             if x == xApple and y == yApple:
                     line += apple
-                    generateApple()
             elif isThatASnake() :
                 line += snake
             else:
                     line += " "
     #LOGIQUE
-            if not playerCoordinateX[-1] == xApple and playerCoordinateY[-1] ==yApple:
+            while playerCoordinateX[-1] != xApple and playerCoordinateY[-1] != yApple:
                 playerCoordinateX.pop(0)
                 playerCoordinateY.pop(0)
-            elif playerCoordinateX[-1] == xApple and playerCoordinateY[-1] == yApple:
+            if playerCoordinateX[-1] == xApple and playerCoordinateY[-1] == yApple:
                 generateApple()
         line += "|"
         print(line)
