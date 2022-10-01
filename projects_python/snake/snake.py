@@ -56,6 +56,7 @@ def isThatASnake():
 generateApple()
 while True:
     deplacement()
+    #DEPLACEMENT
     print(" ........")
     for y in range(8):
         line = "|"
@@ -67,12 +68,14 @@ while True:
                 line += snake
             else:
                     line += " "
-        if not x == xApple and y ==yApple:
+    #LOGIQUE
+            if not playerCoordinateX[-1] == xApple and playerCoordinateY[-1] ==yApple:
                 playerCoordinateX.pop(0)
                 playerCoordinateY.pop(0)
-        else:
-            generateApple()
-                
+            elif playerCoordinateX[-1] == xApple and playerCoordinateY[-1] == yApple:
+                generateApple()
         line += "|"
         print(line)
     print(" °°°°°°°°")
+    print(playerCoordinateX)
+    print(playerCoordinateY)
