@@ -1,4 +1,3 @@
 pblm : 
 
-lorsque la liste n'a qu'une seule valeur,
-deux x apparaisse
+la pomme rajoute un " " dans la ligne
