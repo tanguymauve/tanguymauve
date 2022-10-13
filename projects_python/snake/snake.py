@@ -11,10 +11,9 @@ playerCoordinateY = [0] #List to register every snake's y coordinate
 print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
 
 #Fonctions 
-def deplacement():
+def deplacement(): #Based on the player direction, we add a +1 in the corresponding list
     deplacement = input("direction :")
     if deplacement == "d" and playerCoordinateX[0] < 7:
-        #player go right
         playerCoordinateX.append(playerCoordinateX[0] + 1)
         playerCoordinateY.append(playerCoordinateY[0])
         print("player_x =", playerCoordinateX[0], "player_y =", playerCoordinateY[0])
