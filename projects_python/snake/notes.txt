@@ -1,3 +1,5 @@
 pblm : 
 
-la pomme rajoute un " " dans la ligne
+-la pomme rajoute un " " dans la ligne
+-délai entre le déplacement des deux x
+-superposition des x

@@ -17,25 +17,21 @@ def deplacement(): #Based on the player direction, we add a +1 in the correspond
     if deplacement == "d" and playerCoordinateX[0] < 7:
         playerCoordinateX.append(playerCoordinateX[0] + 1)
         playerCoordinateY.append(playerCoordinateY[0])
-        print("player_x =", playerCoordinateX[0], "player_y =", playerCoordinateY[0])
             
     elif deplacement == "q" and playerCoordinateX[0] > 0:
         #player go left
         playerCoordinateX.append(playerCoordinateX[0] - 1)
         playerCoordinateY.append(playerCoordinateY[0])
-        print("player_x =", playerCoordinateX[0], "player_y =", playerCoordinateY[0])  
         
     elif deplacement == "z" and playerCoordinateY[0] > 0:
         #player_x go up
         playerCoordinateX.append(playerCoordinateX[0])
         playerCoordinateY.append(playerCoordinateY[0] - 1)
-        print("player_x =", playerCoordinateX[0], "player_y =", playerCoordinateY[0])
         
     elif deplacement == "s" and playerCoordinateY[0] < 7:
         #player_x go down
         playerCoordinateX.append(playerCoordinateX[0])
         playerCoordinateY.append(playerCoordinateY[0] + 1)
-        print("player_x =", playerCoordinateX[0], "player_y =", playerCoordinateY[0])
     else:
         print("The snake is not thin enough !")
         
@@ -69,7 +65,7 @@ while True:
             if isThatASnake() :
                 line += snake
             else:
-                    line += " "
+                line += " "
         line += "|"
         print(line)
     print(" °°°°°°°°")
