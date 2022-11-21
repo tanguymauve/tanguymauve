@@ -61,11 +61,10 @@ ent_Country.grid(row=8, column=2, sticky="e")
 
 #Deuxième Frame
 frame2 = Frame(master=window,
-               borderwidth=1,
                width=470,
                height=35)
 
-frame2.grid(row=10, padx=5, pady=5)
+frame2.grid(row=10, padx=5)
 frame2.grid_propagate(0)
 
 frame2.columnconfigure(1, weight=1)
