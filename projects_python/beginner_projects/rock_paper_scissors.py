@@ -1,9 +1,6 @@
 import random
 from time import sleep
 
-# ajouter un score
-
-
 def opponent_move():
     global comp_move
     global my_move
