@@ -68,7 +68,7 @@ frame2 = Frame(master=window,
                width=470,
                height=35)
 
-frame2.grid(row=10, padx=5)
+frame2.grid(row=10, padx=5, pady=10)
 frame2.grid_propagate(0)
 
 frame2.columnconfigure(1, weight=1)
@@ -77,7 +77,7 @@ frame2.columnconfigure(2, weight=1)
 
 #Button
 btn_Clear = Button(frame2, text="Clear")
-btn_Clear.grid(row= 1, column=2, sticky="e", padx=80)
+btn_Clear.grid(row= 1, column=2, sticky="e",  padx=80)
 
 btn_Submit = Button(frame2, text="Submit")
 btn_Submit.grid(row=1, column=2, sticky="e")

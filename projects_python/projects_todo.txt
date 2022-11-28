@@ -14,3 +14,5 @@ AI :
 
 - house price prediction
     linear regression
+
+Build an app that searches Duck Duck Go for Python project recommendations. Save the top 10 in a database. If you already have Django or Flask experience, make a web app with full crud/sorting.
