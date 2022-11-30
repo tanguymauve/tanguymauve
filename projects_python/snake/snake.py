@@ -62,7 +62,7 @@ while True:
         for x in range(8):
             if x == xApple and y == yApple:
                 line += apple
-            if isThatASnake() :
+            elif isThatASnake() :
                 line += snake
             else:
                 line += " "

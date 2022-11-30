@@ -1,5 +1,9 @@
 pblm : 
 
--la pomme rajoute un " " dans la ligne
 -délai entre le déplacement des deux x
 -superposition des x
+-chaque x bouge au tour par tour
+
+Question : pourquoi un x bouge puis l'autre
+
+il faudrait que seulement un bouge et que l'autre suive
