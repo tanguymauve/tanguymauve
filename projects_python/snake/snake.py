@@ -9,29 +9,31 @@ playerCoordinateX = [0] #List to register every snake's x coordinate
 playerCoordinateY = [0] #List to register every snake's y coordinate 
 eatenApple = 0
 #Intro
-print("hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
+print("Hello and welcome to snake ! d is for going right, q going left, z going up and s going down !")
+print(playerCoordinateX)
+print(playerCoordinateY)
 
 #Fonctions 
 def deplacement(): #Based on the player direction, we add a +1 in the corresponding list
     deplacement = input("direction :")
     if deplacement == "d" and playerCoordinateX[0] < 7:
-        playerCoordinateX.append(playerCoordinateX[0] + 1)
+        playerCoordinateX.append(playerCoordinateX[-1] + 1)
         playerCoordinateY.append(playerCoordinateY[0])
             
     elif deplacement == "q" and playerCoordinateX[0] > 0:
         #player go left
-        playerCoordinateX.append(playerCoordinateX[0] - 1)
+        playerCoordinateX.append(playerCoordinateX[-1] - 1)
         playerCoordinateY.append(playerCoordinateY[0])
         
     elif deplacement == "z" and playerCoordinateY[0] > 0:
         #player_x go up
         playerCoordinateX.append(playerCoordinateX[0])
-        playerCoordinateY.append(playerCoordinateY[0] - 1)
+        playerCoordinateY.append(playerCoordinateY[-1] - 1)
         
     elif deplacement == "s" and playerCoordinateY[0] < 7:
         #player_x go down
         playerCoordinateX.append(playerCoordinateX[0])
-        playerCoordinateY.append(playerCoordinateY[0] + 1)
+        playerCoordinateY.append(playerCoordinateY[-1] + 1)
     else:
         print("The snake is not thin enough !")
         
