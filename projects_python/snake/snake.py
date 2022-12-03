@@ -45,7 +45,7 @@ def isThatASnake():
     for i in range(len(playerCoordinateX)):  
                 if x == playerCoordinateX[i] and y == playerCoordinateY[i]:
                     return True
-    return False
+    return False 
 
 generateApple()
 while True:
@@ -66,9 +66,10 @@ while True:
                 line += snake
             else:
                 line += " "
-        line += "|"
-        print(line)
+        line += "|" 
+        print(line) 
     print(" °°°°°°°°")
     
     print(playerCoordinateX)
     print(playerCoordinateY)
+    

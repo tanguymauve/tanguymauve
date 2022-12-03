@@ -6,4 +6,9 @@ pblm :
 
 Question : pourquoi un x bouge puis l'autre
 
-il faudrait que seulement un bouge et que l'autre suive
+il faudrait que seulement le d bouge et que l'autre suive
+
+Faire un déplacement pour la tête/premier x et un déplacement qui ne dépend pas de l'input user 
+mais de la position de la tête = conséquence du mouvement de la tête
+
+ajouter les coordonnées de la queue toujours en dernier et l'input user dans le premier slot
