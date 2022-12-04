@@ -51,9 +51,9 @@ generateApple()
 while True:
     deplacement()
     if xApple == playerCoordinateX[-1] and yApple == playerCoordinateY[-1]:
-        eatenApple += 1
-        generateApple()
-    
+            for j in range(playerCoordinateX[j]):
+                if xApple != playerCoordinateX and yApple != playerCoordinateY:
+                    generateApple()
     else:
         playerCoordinateX.pop(0)
         playerCoordinateY.pop(0) 
