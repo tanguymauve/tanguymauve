@@ -23,15 +23,18 @@ def string_converter(string):
     list_word_to_guess = []
     list_word_to_guess[:0] = string
     return list_word_to_guess
-    #Front End
+    
+    
+#Front End
 
 def screen():
     for i in range(length_of_word):
         print(''.join("_"))
 
 #Process
-while list_word_to_guess:
-    string_converter(word_to_guess)
+string_converter(word_to_guess)
+while list_word_to_guess == False:
+    print(list_word_to_guess)
     guess_the_word()
     print(''.join(list_word_to_guess))
     print(''.join(discoverd_letters))
