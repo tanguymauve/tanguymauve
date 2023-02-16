@@ -33,7 +33,7 @@ def screen():
 
 #Process
 string_converter(word_to_guess)
-while list_word_to_guess == False:
+while len(list_word_to_guess) > 0:
     print(list_word_to_guess)
     guess_the_word()
     print(''.join(list_word_to_guess))
