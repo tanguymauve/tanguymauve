@@ -1,0 +1,8 @@
+- Call a variable that hasn't been define yet
+- Can't concatenate a list
+- Can't item assign a list
+```
+str = "1"
+list = []
+list[str] = ERROR
+```
