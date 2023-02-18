@@ -9,7 +9,6 @@ screen = []
     #Back End
 #Permet de check le match entre l' inpunt user et une lettre dans le mot à deviner
 #Permet ensuite de prendre l'index de la lettre deviné dans la liste mot_a_deviner, l'enlève et la met dans discovered_letter
-''''''
 def guess_the_word():
     global screen
     screen = []
