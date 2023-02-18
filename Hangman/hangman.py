@@ -1,6 +1,3 @@
-import getpass
-
-
 #Variables
 word_to_guess = "france"
 length_of_word = len(word_to_guess)
@@ -12,6 +9,7 @@ screen = []
     #Back End
 #Permet de check le match entre l' inpunt user et une lettre dans le mot à deviner
 #Permet ensuite de prendre l'index de la lettre deviné dans la liste mot_a_deviner, l'enlève et la met dans discovered_letter
+''''''
 def guess_the_word():
     global screen
     screen = []
@@ -52,10 +50,15 @@ def screen_display():
 #Process
 string_converter(word_to_guess)
 print(f'The word have ' + str(length_of_word) + ' letters')
-user_letter_guess = getpass.getpass("Guess a letter")
-while set(discovered_letters) != set(word_to_guess):
-    if word_to_guess !=screen:
-        guess_the_word()
-        user_letter_guess = getpass.getpass("Guess another letter")
-    else:
+user_letter_guess = input("Guess a letter: ")
+while True:
+    #set(discovered_letters) != set(word_to_guess)
+    guess_the_word()
+    print( "Discovered letters so far: ",discovered_letters, "\n")
+    user_letter_guess = input("Guess another letter: ")
+    
+    if set(discovered_letters) == set(word_to_guess):
         print(f'Congrats ! The word was {word_to_guess}!')
+        break
+
+#to-do : add the hangman and the "guessing the entire word" function
