@@ -1,7 +1,10 @@
+import getpass
+
+
 #Variables
 word_to_guess = "france"
 length_of_word = len(word_to_guess)
-discoverd_letters =[]
+discovered_letters =[]
 screen = []
 
 
@@ -14,16 +17,17 @@ def guess_the_word():
     screen = []
     screen = ['_'] * length_of_word
     if word_to_guess.__contains__(user_letter_guess):
-        index = list_word_to_guess.index(user_letter_guess)
-        screen[index] = user_letter_guess
-        print(screen)
-        list_word_to_guess.pop(index)
-        discoverd_letters.append(user_letter_guess)
-        
-        
-        print(f"There is indeed a {user_letter_guess} in the secret word")
+        for i, letter in enumerate(list_word_to_guess):
+            if letter == user_letter_guess:
+                discovered_letters.append(user_letter_guess)
+                list_word_to_guess[i] = None
+
+        for i, letter in enumerate(word_to_guess):
+            if letter in discovered_letters:
+                screen[i] = letter
+        print(''.join(screen)+"\n")
     else:
-        print("MIIIIIPPP wrong")
+        print("MIIIIIPPP wrong\n")
 
 #Permet de transformer la string mot mystère en une liste. Liste nécessaire pour enlever au fur et à mesure les lettres déja devinés
 def string_converter(string):
@@ -48,12 +52,10 @@ def screen_display():
 #Process
 string_converter(word_to_guess)
 print(f'The word have ' + str(length_of_word) + ' letters')
-user_letter_guess = input("Guess a letter\n")
-while len(list_word_to_guess) > 0:
-    
-    guess_the_word()
-    #screen_display()
-    print("Discover letter so far : ", discoverd_letters)
-    user_letter_guess = input("Guess another letter\n")
-    
-print(f'Congrats ! The word was {word_to_guess}!')
+user_letter_guess = getpass.getpass("Guess a letter")
+while set(discovered_letters) != set(word_to_guess):
+    if word_to_guess !=screen:
+        guess_the_word()
+        user_letter_guess = getpass.getpass("Guess another letter")
+    else:
+        print(f'Congrats ! The word was {word_to_guess}!')
