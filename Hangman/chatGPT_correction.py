@@ -1,57 +1,70 @@
-#Variables
-word_to_guess = "capybara"
-length_of_word = len(word_to_guess)
-discoverd_letters = []
-screen = []
+import random
 
+# Words to guess
+categories = [
+    # Car brands
+    ['audi', 'bmw', 'citroen', 'ferrari', 'fiat', 'ford', 'honda', 'lamborghini', 'mercedes', 'renault'],
+    # Countries
+    ['france', 'italie', 'espagne', 'chine', 'japon', 'portugal', 'canada', 'mexique', 'argentine', 'bresil'],
+    # Vegetables
+    ['tomate', 'concombre', 'carotte', 'poivron', 'brocoli', 'aubergine', 'oignon', 'ail', 'courgette', 'radis'],
+    # Colors
+    ['bleu', 'rouge', 'vert', 'jaune', 'orange', 'rose', 'violet', 'marron', 'gris', 'blanc'],
+    # Professions
+    ['docteur', 'avocat', 'policier', 'acteur', 'peintre', 'architecte', 'veterinaire', 'informaticien', 'boulanger', 'professeur']
+]
 
-#Functions
-#Back End
-#Permet de vérifier si l'input user contient une lettre du mot mystère, et retire la lettre correspondante
-def guess_the_word():
-    if user_letter_guess in word_to_guess:
-        index = word_to_guess.index(user_letter_guess)
-        discoverd_letters.append(user_letter_guess)
-        print(f"There is indeed a {user_letter_guess} in the secret word")
-    else:
-        print("MIIIIIPPP wrong")
+# Ask the user to choose a category
+print("Choisissez une catégorie en tapant le numéro associé à la catégorie :")
+print("1: Marques de voitures, 2: Pays, 3: Légumes, 4: Couleurs, 5: Professions")
+category_num = int(input())
 
+# Check if the chosen category number is valid
+while category_num < 1 or category_num > 5:
+    print("Numéro de catégorie invalide. Veuillez choisir un numéro de catégorie entre 1 et 5.")
+    category_num = int(input())
 
-#Permet de transformer la string mot mystère en une liste. Liste nécessaire pour enlever au fur et à mesure les lettres déja devinés
-def string_converter(string):
-    global list_word_to_guess
-    list_word_to_guess = []
-    list_word_to_guess[:0] = string
-    return list_word_to_guess
+# Select the word to guess from the chosen category
+word_to_guess = random.choice(categories[category_num-1])
 
+# Initialize the list of used letters
+used_letters = []
 
-#Front End
-def screen_display():
-    global screen
-    screen = list(screen)
-    for i, letter in enumerate(word_to_guess):
-        if letter in discoverd_letters:
-            screen[i*2] = letter
+# Game loop
+print(f"Il y a {len(word_to_guess)} lettres dans le mot à deviner.\n")
+while True:
+    # Display the word to guess with underscores for hidden letters
+    hidden_word = ""
+    for letter in word_to_guess:
+        if letter in used_letters:
+            hidden_word += letter
         else:
-            screen[i*2] = "_"
-    screen = "".join(screen)
-    print(screen)
+            hidden_word += "_"
+        hidden_word += " "
+    print(f"Lettres utilisées : {' '.join(used_letters)}")
+    print(hidden_word)
 
-
-#Process
-string_converter(word_to_guess)
-print(f'The word has {length_of_word} letters')
-screen = "_" * (length_of_word * 2 - 1)
-print(screen)
-while len(word_to_guess) > 0:
-    user_letter_guess = input("Guess a letter\n")
-    guess_the_word()
-    screen_display()
-    if user_letter_guess not in word_to_guess:
-        word_to_guess = word_to_guess
-    else:
-        word_to_guess = word_to_guess.replace(user_letter_guess, "")
-    if len(word_to_guess) == 0:
+    # Check if the user has won
+    if "_" not in hidden_word:
+        print(f"Félicitations, vous avez gagné ! Le mot à deviner était {word_to_guess}")
         break
 
-print(f'Congrats! The word was {word_to_guess}!')
+    # Ask the user to guess a letter
+    guess = input("Entrez une lettre: ").lower()
+
+    # Check if the guess is valid
+    if len(guess) != 1 or not guess.isalpha():
+        print("Veuillez entrer une seule lettre.")
+        continue
+    if guess in used_letters:
+        print("Vous avez déjà utilisé cette lettre.")
+        continue
+
+    # Add the guess to the list of used letters
+    used_letters.append(guess)
+
+    # Check if the guess is correct
+    if guess in word_to_guess:
+        print(f"La lettre '{guess}' est présente dans le mot à deviner.")
+    else:
+        print(f"La lettre '{guess}' n'est pas présente dans le mot à deviner.")
